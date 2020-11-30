@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 import complaints.views
+import employees.views
 
 urlpatterns = [
     path("", include("core.urls", namespace="core")),
@@ -24,4 +25,5 @@ urlpatterns = [
     path("reservations/", include("reservations.urls", namespace="reservations")),
     path("complaints", complaints.views.complaints, name="complaints"),
     path("complain_text", complaints.views.complain_text, name="complain_text"),
+    path("employees/", include("employees.urls", namespace="employees")),
 ]
